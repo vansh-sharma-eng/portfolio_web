@@ -28,7 +28,7 @@ I update the site whenever I learn something new. Recently, I added:
 A custom alert for navigation
 Better spacing and layout for small screens
 Cleaner and more organized code
-Automatic system theme support (dark/light mode)
+Automatic system theme support (dark/light mode).
 ---
 🛠 Tools I Used
 HTML
