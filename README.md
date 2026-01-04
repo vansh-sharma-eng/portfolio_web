@@ -2,10 +2,6 @@
 This is my personal portfolio website where I share a little about myself, the skills I’m learning, and the projects I’m working on.
 I built this site so people can see what I do in one place and contact me easily.
 ---
-🚀 Live Website
-Click here to visit my portfolio:
-https://vansh935.github.io/portfolio_web/
----
 👋 About This Project
 I created this portfolio using HTML, CSS, and JavaScript.
 My goal was to make it clean, simple, and easy to use — whether someone is on a phone, tablet, or computer.
