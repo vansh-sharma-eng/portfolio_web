@@ -1,4 +1,4 @@
-🌐 My Personal Portfolio
+My Personal Portfolio
 This is my personal portfolio website where I share a little about myself, the skills I’m learning, and the projects I’m working on.
 I built this site so people can see what I do in one place and contact me easily.
 ---
