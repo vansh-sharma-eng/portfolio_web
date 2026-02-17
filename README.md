@@ -1,42 +1,74 @@
-My Personal Portfolio
-This is my personal portfolio website where I share a little about myself, the skills I’m learning, and the projects I’m working on.
-I built this site so people can see what I do in one place and contact me easily.
----
 👋 About This Project
-I created this portfolio using HTML, CSS, and JavaScript.
-My goal was to make it clean, simple, and easy to use — whether someone is on a phone, tablet, or computer.
+
+I built this portfolio using HTML, CSS, and JavaScript.
+
+My goal was to design a website that is:
+
+Clean
+
+Simple
+
+Easy to navigate
+
+Fully responsive (works on mobile, tablet, and desktop)
+
 The website includes:
+
 A short introduction about me
-The skills I'm learning
+
+The skills I am currently learning
+
 My projects
-A way to contact me
----
-✨ What’s Inside
-Here are some things I added to make the website better:
-Works well on mobile, tablet, and desktop
-Light and dark mode (also follows your system theme)
-A navigation menu that closes automatically on mobile
-A small alert box to improve the user experience
-A clean and simple overall design
----
-🔄 Recent Improvements
-I update the site whenever I learn something new. Recently, I added:
-A custom alert for navigation
-Better spacing and layout for small screens
-Cleaner and more organized code
-Automatic system theme support (dark/light mode).
----
-🛠 Tools I Used
+
+A contact section
+
+✨ Features
+
+To improve user experience, I added:
+
+Responsive design for all devices
+
+Light and Dark mode (also follows system theme)
+
+Mobile navigation menu with auto-close feature
+
+Custom alert box
+
+Clean and minimal layout
+
+🔄 Recent Updates
+
+I regularly update this website as I learn new things. Recently, I improved:
+
+Custom navigation alerts
+
+Better spacing and layout for smaller screens
+
+Cleaner and more organized code structure
+
+Automatic system theme detection (Dark/Light mode)
+
+🛠 Tools & Technologies
+
 HTML
+
 CSS
+
 JavaScript
+
 Git & GitHub
+
 VS Code
----
+
 🚀 Projects
 Weather App
-A simple weather app that shows real-time weather using an API.
-More projects will be added as I continue learning and building.
----
-❤️ About This Work
-I created this portfolio to improve my skills and to have something meaningful to share with others. I’ll keep updating it with new features and projects as I grow.
+
+A simple weather application that shows real-time weather data using an API.
+
+More projects will be added as I continue learning and building new things.
+
+❤️ Purpose
+
+I created this portfolio to improve my development skills and to build something meaningful that represents my journey.
+
+I will continue updating it with new projects, features, and improvements as I grow.
