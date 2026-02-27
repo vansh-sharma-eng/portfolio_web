@@ -5,7 +5,6 @@ window.addEventListener('scroll', () => {
 
   document.querySelector('.progress-bar').style.width = scrollPercent + '%';
 });
-
 function downloadResume() {
   if (confirm("Do you want to download the resume?")) {
     const link = document.createElement('a');
@@ -71,3 +70,4 @@ closeBtn.addEventListener('click', function(){
     alertOpen = false;
     clickCount = 0;
 });
+
