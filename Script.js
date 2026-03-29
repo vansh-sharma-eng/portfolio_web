@@ -1,73 +1,75 @@
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.body.scrollHeight - window.innerHeight;
-  const scrollPercent = (scrollTop / docHeight) * 100;
-
-  document.querySelector('.progress-bar').style.width = scrollPercent + '%';
-});
-function downloadResume() {
-  if (confirm("Do you want to download the resume?")) {
+// Resume Download
+function downloadResume(){
+  if(confirm("Download Resume?")){
     const link = document.createElement('a');
-    link.href = 'My.resume.pdf'; // your PDF path
-    link.download = 'Vansh_Sharma_Resume.pdf';
-    document.body.appendChild(link);
+    link.href = "My.resume.pdf";
+    link.download = "Vansh_Sharma_Resume.pdf";
     link.click();
-    document.body.removeChild(link);
   }
 }
-document.title = "Vansh's Portfolio";
 
-const menuToggle = document.getElementById('menu-toggle');
-const navLinks = document.getElementById('nav-links');
+// Smooth scroll active link highlight
+const links = document.querySelectorAll("nav a");
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('show');
-});
-
-let links = document.querySelectorAll('.nav-link');
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.classList.remove('show');
+links.forEach(link=>{
+  link.addEventListener("click",()=>{
+    links.forEach(l=>l.classList.remove("active"));
+    link.classList.add("active");
   });
 });
 
-let alertBox = document.getElementById('custom-alert');
-let alertMsg = document.getElementById('alert-message');
-let closeBtn = document.getElementById('close-alert');
 
-let alertOpen = false;
-let clickCount = 0;
+// =======================
+// 🎯 CARD TILT EFFECT
+// =======================
+const card = document.querySelector('.card');
 
-links.forEach(function(link){
-    link.addEventListener('click', function(e){
-        let targetId = this.getAttribute('href').slice(1);
-        let section = document.getElementById(targetId);
-        
-        let sectionTop = section.offsetTop;
-        let scrollTop = window.scrollY;
+card.addEventListener('mousemove', (e) => {
+  const rect = card.getBoundingClientRect();
 
-        if(alertOpen){
-            e.preventDefault();
-            clickCount++;
-            if(clickCount >= 3){
-                alertMsg.textContent = "Please click OK before doing anything else!";
-            }
-            return;
-        }
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
 
-        if(Math.abs(scrollTop - sectionTop) < 10){
-            e.preventDefault();
-            alertMsg.textContent = "You are already on the " + targetId + " section!";
-            alertBox.style.display = "block";
-            alertOpen = true;
-            clickCount = 0;
-        }
-    });
+  const rotateY = (x - rect.width / 2) / 10;
+  const rotateX = (rect.height / 2 - y) / 10;
+
+  card.style.transform = `
+    rotateY(${rotateY}deg) 
+    rotateX(${rotateX}deg)
+  `;
 });
 
-closeBtn.addEventListener('click', function(){
-    alertBox.style.display = "none";
-    alertOpen = false;
-    clickCount = 0;
+card.addEventListener('mouseleave', () => {
+  card.style.transform = `rotateY(0) rotateX(0)`;
 });
 
+
+// =======================
+// 👋 BOY SCROLL EFFECT
+// =======================
+let lastScrollTop = 0;
+const boy = document.querySelector(".About-img");
+
+// initial setup via JS
+boy.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+
+window.addEventListener("scroll", () => {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  // prevent jitter
+  if (Math.abs(currentScroll - lastScrollTop) < 5) return;
+
+  if (currentScroll > lastScrollTop) {
+    // 🔽 SCROLL DOWN → hide inside card
+    boy.style.transform = "translateX(-120px)";
+    boy.style.opacity = "0";
+    boy.style.visibility = "hidden";
+  } else {
+    // 🔼 SCROLL UP → show again
+    boy.style.transform = "translateX(0)";
+    boy.style.opacity = "1";
+    boy.style.visibility = "visible";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
