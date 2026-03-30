@@ -19,57 +19,67 @@ links.forEach(link=>{
 });
 
 
-// =======================
-// 🎯 CARD TILT EFFECT
-// =======================
-const card = document.querySelector('.card');
 
-card.addEventListener('mousemove', (e) => {
-  const rect = card.getBoundingClientRect();
+const aboutSection = document.querySelector("#about");
 
-  const x = e.clientX - rect.left;
-  const y = e.clientY - rect.top;
-
-  const rotateY = (x - rect.width / 2) / 10;
-  const rotateX = (rect.height / 2 - y) / 10;
-
-  card.style.transform = `
-    rotateY(${rotateY}deg) 
-    rotateX(${rotateX}deg)
-  `;
-});
-
-card.addEventListener('mouseleave', () => {
-  card.style.transform = `rotateY(0) rotateX(0)`;
-});
-
-
-// =======================
-// 👋 BOY SCROLL EFFECT
-// =======================
-let lastScrollTop = 0;
-const boy = document.querySelector(".About-img");
-
-// initial setup via JS
-boy.style.transition = "transform 0.4s ease, opacity 0.4s ease";
-
-window.addEventListener("scroll", () => {
-  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-  // prevent jitter
-  if (Math.abs(currentScroll - lastScrollTop) < 5) return;
-
-  if (currentScroll > lastScrollTop) {
-    // 🔽 SCROLL DOWN → hide inside card
-    boy.style.transform = "translateX(-120px)";
-    boy.style.opacity = "0";
-    boy.style.visibility = "hidden";
-  } else {
-    // 🔼 SCROLL UP → show again
-    boy.style.transform = "translateX(0)";
-    boy.style.opacity = "1";
-    boy.style.visibility = "visible";
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        aboutSection.classList.add("active");
+      } else {
+        aboutSection.classList.remove("active");
+      }
+    });
+  },
+  {
+    threshold: 0.2,
   }
+);
 
-  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+observer.observe(aboutSection);
+
+
+const cards = document.querySelectorAll(".skill-card");
+let current = 2; // center card
+
+function updateStack() {
+  cards.forEach((card, i) => {
+    let offset = i - current;
+
+    card.style.transform = `
+      translateX(${offset * 120}px)
+      scale(${1 - Math.abs(offset) * 0.15})
+      rotateY(${offset * 10}deg)
+    `;
+
+    card.style.zIndex = 10 - Math.abs(offset);
+    card.style.opacity = Math.abs(offset) > 2 ? 0 : 1;
+
+    // active class
+    card.classList.toggle("active", i === current);
+  });
+}
+
+// initial load
+updateStack();
+
+// NEXT ➡️
+document.getElementById("next").onclick = () => {
+  current = (current + 1) % cards.length;
+  updateStack();
+};
+
+// PREV ⬅️
+document.getElementById("prev").onclick = () => {
+  current = (current - 1 + cards.length) % cards.length;
+  updateStack();
+};
+
+// CLICK CARD
+cards.forEach((card, index) => {
+  card.addEventListener("click", () => {
+    current = index;
+    updateStack();
+  });
 });
