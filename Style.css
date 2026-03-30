@@ -8,6 +8,8 @@
 body{
   background: linear-gradient(135deg,#0f172a,#1e293b);
   color:#fff;
+  overflow: auto;
+  user-select: none;
 }
 
 /* HEADER */
@@ -114,7 +116,7 @@ nav a:hover{
 }
 
 /* Card */
-.card {
+.card-img {
   width: 320px;
   height: 420px;
   transform-style: preserve-3d;
@@ -122,7 +124,7 @@ nav a:hover{
 }
 
 /* Image */
-.card img {
+.card-img img {
   width: 110%;
   height: 110%;
   border-radius: 20px;
@@ -145,54 +147,187 @@ hr{
   margin-top: -45px;
   background-color: aliceblue;
 }
-
-
-
 /* ABOUT */
+
 .card-section {
   width: 60%;
   height: 400px;
-  background: #1e293b;
-  border-radius: 12px;
+  background: linear-gradient(145deg, #1e293b, #0f172a);
+  border-radius: 16px;
   margin: 40px;
   margin-top: 100px;
   margin-left: 250px;
-  position: relative; /* keep this */
-  z-index: 1;
+  position: relative;
+  z-index: 10;
+  padding: 30px;
+  color: #e2e8f0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+/* hover */
+.card-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* glow */
+.card-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(120deg, transparent, #38bdf8, transparent);
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+                linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  opacity: 0.1;
+}
+
+/* text */
+.card-section h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 48px;
+}
+
+.card-section p {
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  color: #cbd5f5;
+}
+
+/* image container */
 .About-right {
-  position: fixed;
-  right: 0;
-  bottom: 50px;
-  height: 400px;
-  z-index: 9999;
+  position: absolute;
+  right: -120px;
+  bottom: 0;
+  height: 100%;
+  z-index: 5;
   pointer-events: none;
-  overflow: hidden; /* 🔥 helps hide cleanly */
 }
 
+/* 🔥 image (small movement only) */
 .About-img {
   height: 390px;
   width: 450px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-margin-top: 25px;
-margin-right: -7px;
+  margin-top: 6px;
+  transform: translateX(135.5px); /* 👈 start (slightly left) */
+  opacity: 0;
+  transition: transform 0.7s ease, opacity 0.7s ease;
 }
 
 
+/*skills
 
-
-
-
-/* SKILLS */
-.skills span{
-  display:inline-block;
-  margin:10px;
-  padding:10px 15px;
-  background:#334155;
-  border-radius:8px;
+/* 🔥 active (move little right) */
+.card-section.active .About-img {
+  transform: translateX(142px); /* 👈 small movement only */
+  opacity: 1;
 }
 
+
+/*-----------------------------------
+
+*/
+
+#cardimg img{
+   width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SECTION */
+.skills-section {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.skills-section h2 {
+  color: #000;
+  font-size: 32px;
+}
+#cardhead{
+background-image: url("");  
+ background-size: cover;        /* 🔥 makes it fill */
+  background-position: center;   /* center image */
+  background-repeat: no-repeat;
+}
+/* STACK */
+.card-stack {
+  position: relative;
+  width: 420px;
+  height: 260px;
+  margin: auto;
+}
+
+/* CARD (BIGGER SIZE 🔥) */
+.skill-card {
+  position: absolute;
+  width: 100%;
+  height: 220px;
+  background: #e5e7eb;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+/* TEXT */
+.skill-card h3 {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #000;
+}
+
+.skill-card ul{
+  color: #000;
+  font-size: 18px;
+
+}
+.skill-card li:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+/* CENTER CARD */
+.skill-card.active {
+  background: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ARROWS */
+.controls {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.controls button {
+  background: #ffffffbb;
+  border: 1px solid black; 
+  font-size: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #000;
+  
+}
+
+.controls button:hover {
+  background: #ddd;
+}
+
+/*------------------------------------------------
 /* PROJECTS */
 .project-grid{
   display:flex;
@@ -201,6 +336,7 @@ margin-right: -7px;
 }
 
 .project-card{
+  margin-top: 200px;
   background:#1e293b;
   padding:20px;
   border-radius:10px;
