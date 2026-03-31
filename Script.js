@@ -39,47 +39,67 @@ const observer = new IntersectionObserver(
 
 observer.observe(aboutSection);
 
+const skills = document.querySelectorAll(".skill");
 
-const cards = document.querySelectorAll(".skill-card");
-let current = 2; // center card
-
-function updateStack() {
-  cards.forEach((card, i) => {
-    let offset = i - current;
-
-    card.style.transform = `
-      translateX(${offset * 120}px)
-      scale(${1 - Math.abs(offset) * 0.15})
-      rotateY(${offset * 10}deg)
-    `;
-
-    card.style.zIndex = 10 - Math.abs(offset);
-    card.style.opacity = Math.abs(offset) > 2 ? 0 : 1;
-
-    // active class
-    card.classList.toggle("active", i === current);
+const Observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
   });
+}, { threshold: 0.2 });
+
+skills.forEach((skill, i) => {
+  skill.style.opacity = "0";
+  skill.style.transform = "translateY(40px)";
+  skill.style.transition = `0.5s ease ${i * 0.05}s`;
+  Observer.observe(skill);
+});
+
+const cards = document.querySelectorAll(".project-card");
+
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("active");
+  });
+});
+
+const form = document.getElementById("contactForm");
+const thankCard = document.getElementById("thankCard");
+const thankMsg = document.getElementById("thankMsg");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+
+  // Show thank you message
+  thankMsg.innerText = `Thank you, ${name}! Your message has been sent successfully 🚀`;
+
+  thankCard.classList.add("active");
+
+  // SEND DATA TO FORMSPREE
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: { 'Accept': 'application/json' }
+  });
+
+  form.reset();
+});
+
+function closeCard() {
+  thankCard.classList.remove("active");
 }
 
-// initial load
-updateStack();
+document.querySelectorAll('.footer-nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
 
-// NEXT ➡️
-document.getElementById("next").onclick = () => {
-  current = (current + 1) % cards.length;
-  updateStack();
-};
-
-// PREV ⬅️
-document.getElementById("prev").onclick = () => {
-  current = (current - 1 + cards.length) % cards.length;
-  updateStack();
-};
-
-// CLICK CARD
-cards.forEach((card, index) => {
-  card.addEventListener("click", () => {
-    current = index;
-    updateStack();
+    const target = document.querySelector(this.getAttribute('href'));
+    target.scrollIntoView({
+      behavior: 'smooth'
+    });
   });
 });
