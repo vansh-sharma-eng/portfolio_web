@@ -1,45 +1,102 @@
-👋 About This Project
+# 🌐 Personal Portfolio Website
 
-I built this portfolio using HTML, CSS, and JavaScript.
-My goal was to design a website that is:
-Clean
-Simple
-Easy to navigate
-Fully responsive (works on mobile, tablet, and desktop)
-The website includes:
-A short introduction about me
-The skills I am currently learning
-My projects
+Welcome to my personal portfolio!
+This project showcases my journey as a developer, the skills I’m learning, and the projects I’m building along the way.
 
-A contact section
-✨ Features
-To improve user experience, I added:
-Responsive design for all devices
-Light and Dark mode (also follows system theme)
-Mobile navigation menu with auto-close feature
-Custom alert box
-Clean and minimal layout
+---
 
-🔄 Recent Updates
-I regularly update this website as I learn new things. Recently, I improved:
-Custom navigation alerts
-Better spacing and layout for smaller screens
-Cleaner and more organized code structure
-Automatic system theme detection (Dark/Light mode)
+## 👋 About This Project
 
-🛠 Tools & Technologies
-HTML
-CSS
-JavaScript
-Git & GitHub
-VS Code
+This portfolio is built using **HTML, CSS, and JavaScript** with a focus on simplicity and usability.
 
-🚀 Projects
-Weather App
-A simple weather application that shows real-time weather data using an API.
-More projects will be added as I continue learning and building new things.
+### 🎯 Goals
 
-❤️ Purpose
-I created this portfolio to improve my development skills and to build something meaningful that represents my journey.
+* Clean and minimal design
+* Easy navigation
+* Fully responsive across all devices (mobile, tablet, desktop)
 
-I will continue updating it with new projects, features, and improvements as I grow.
+### 📌 What’s Inside
+
+* 👨‍💻 A short introduction about me
+* 📚 Skills I am currently learning
+* 🚀 Projects I’ve built
+* 📬 Contact section
+
+---
+
+## ✨ Features
+
+To create a smooth and modern user experience, this website includes:
+
+* 📱 Fully responsive design
+* 🌙 Light & Dark mode (follows system preference)
+* 📋 Mobile navigation menu with auto-close
+* 🔔 Custom alert system
+* 🎨 Clean and minimal UI
+
+---
+
+## 🔄 Recent Updates
+
+I continuously improve this portfolio as I learn new things.
+
+### 🆕 Latest Improvements
+
+* Improved custom navigation alerts
+* Better spacing and layout for smaller screens
+* Cleaner and more organized code structure
+* Automatic system theme detection (Dark/Light mode)
+
+---
+
+## 🛠 Tech Stack
+
+* **HTML5**
+* **CSS3**
+* **JavaScript (ES6+)**
+* **Git & GitHub**
+* **VS Code**
+
+---
+
+## 🚀 Projects
+
+### 🌦 Weather App
+
+A simple weather application that fetches real-time data using an API.
+
+> More projects coming soon as I continue learning and building!
+
+---
+
+## ❤️ Purpose
+
+This portfolio represents my growth as a developer.
+
+I built it to:
+
+* Improve my skills
+* Practice real-world development
+* Create something meaningful
+
+I will continue updating it with new features, projects, and improvements as I grow 🚀
+
+---
+
+## 📬 Contact
+
+Feel free to connect with me!
+
+* 💼 Portfolio: *(Add your live link here)*
+* 📧 Email: *(Add your email)*
+* 🔗 LinkedIn: *(Add your profile)*
+
+---
+
+## ⭐ Support
+
+If you like this project, consider giving it a ⭐ on GitHub!
+
+---
+
+> “Learning never stops — and neither does building.” 💡
