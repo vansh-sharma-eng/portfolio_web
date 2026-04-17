@@ -105,9 +105,9 @@ cd portfolio
 
 ## 📬 Contact
 
-* 💼 Portfolio: *Add your live link*
-* 📧 Email: *Add your email*
-* 🔗 LinkedIn: *Add your profile*
+* 💼 Portfolio: https://vansh-sharma-eng.github.io/portfolio_web/
+* 📧 Email: vanshsharmas92005@gmail.com
+* 🔗 LinkedIn: linkedin.com/in/vansh-sharma-678323301
 * 🐙 GitHub: https://github.com/vansh-sharma-eng
 
 ---
