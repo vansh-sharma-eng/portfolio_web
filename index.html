@@ -3,176 +3,237 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vansh Sharma Portfolio</title>
+  <title>Document</title>
   <link rel="stylesheet" href="Style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
+  
 
-<header>
-  <div class="logo">Vansh Sharma</div>
-  <nav id="nav-links">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-  </nav>
-  <button class="resume-btn" onclick="downloadResume()">Resume</button>
-</header>
+  <header class="navbar">
+    <div class="logo">Vansh Sharma</div>
+    <nav>
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Education">Education</a></li>
+      </ul>
+    </nav>
+    <button class="contact-btn">Contact</button>
+  </header>
 
-<section id="home" class="hero">
-  <div class="hero-text">
-    <h1>Hi, I'm <span>Vansh Sharma  <span class="wave">👋</span></span></h1>
-    <h2>Full Stack Developer (Fresher)</h2>
-   
-<p id="text"></p>
-
+  <section class="home reveal up" id="Home" >
+    <div class="avatar">V</div>
+    <h1>Vansh Sharma</h1>
+    <h2>Full Stack Developer  
+</h2>
+    <p>
+      Building scalable web applications that solve real-world problems using modern technologies.
+    </p>
 
     <div class="buttons">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="#contact" class="btn secondary">Contact Me</a>
+      <button class="primary">View Projects</button>
+      <button class="secondary">Get in Touch</button>
     </div>
-  </div>
-  <div class="hero">
-  <div class="scene">
-    <div class="home-img">
-      <img src="home -img.png" alt="developer">
-    </div>
-  </div>
-</div>
-</section>
+   <div class="social-container">
+    <a href="https://github.com/vansh-sharma-eng"  target="_blank" class="icon">
+      <i class="fab fa-github"></i>
+    </a>
 
-<section id="about" class="card-section">
+    <a href="https://www.linkedin.com/in/vansh-sharma-678323301" target="_blank" class="icon">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <a href="mailto:vanshsharmas92005@gmail.com" target="_blank" class="icon">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  </section>
+
+<section class="about reveal left" id="About">
   <h2>About Me</h2>
-  <p>
-I’m a passionate Full Stack Developer and currently a 3rd year B.Tech student, actively looking for internship and job opportunities where I can apply my skills and grow as a developer.
-I have hands-on experience working with technologies like Java, JavaScript, and React, and I enjoy building real-world applications that are both functional and user-friendly. I’m someone who believes in consistency over motivation — I show up every day to learn, improve, and get better at what I do.
-What sets me apart is my ability to learn new technologies quickly and adapt to different challenges. Whether it's frontend development or backend logic, I like understanding things deeply and building clean, scalable solutions.
-Right now, I’m focused on improving my full stack development skills and looking for opportunities where I can contribute, learn from experienced developers, and grow in a professional environment.
-  </p>
-</section>
+  <div class="underline"></div>
 
-<section class="skills-section" id="skills">
-  <h2 class="section-title">Skills</h2>
-  <p class="section-subtitle">
-    The skills, tools and technologies I am really good at:
+  <p class="about-text">
+    Passionate Full Stack Developer with a strong foundation in JavaScript, React, and Spring Boot.
+    Currently pursuing B.Tech, I focus on building scalable and efficient web applications.
+    I enjoy creating user-friendly websites and continuously improving my skills through real-world projects and problem-solving.
   </p>
-  <div class="skills-container">
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/44/59/32/4459321c4e61adc58c584aa00788d148.jpg">
-      <p>HTML</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/1d/a3/fd/1da3fd017f2d2676be0205c98f586f1e.jpg">
-      <p>CSS</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/1200x/49/9b/1d/499b1d8f955acd1d3ec30f217eddfa2a.jpg">
-      <p>JavaScript</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/0f/65/58/0f6558f88fb457e68f92c042df252892.jpg">
-      <p>React</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/1200x/8d/0c/72/8d0c72f49aaa0a6a35d34c7b98035baa.jpg">
-      <p>Java</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/1200x/f9/60/a7/f960a77b83fb8bdea4c2565ed7bb9a26.jpg">
-      <p>MySQL</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/09/3f/6e/093f6ed3ff0b96f50686bd538383ad9c.jpg">
-      <p>AWS</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/f6/a5/f0/f6a5f03efaf0d364131539df144c20f7.jpg">
-      <p>Git</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/7e/12/ce/7e12ceb8f210365adbb8d9ca5ce925f0.jpg">
-      <p>GitHub</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/1200x/01/e6/21/01e621158668a4b8b7c92f1d1671bd43.jpg">
-      <p>VS Code</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/ee/d3/2e/eed32e9f2d5fd0d8366bcfe1942eedd4.jpg">
-      <p>IntelliJ</p>
-    </div>
-    <div class="skill">
-      <img src="https://i.pinimg.com/736x/0e/73/2b/0e732b52c6af410f4789d8d97b354c91.jpg">
-      <p>DBMS</p>
-    </div>
+
+  <div class="about-cards">
+    <div class="card">✔ 2nd Rank in Inter-House Code Debugging Championship 2026</div>
+    <div class="card">✔ Certified in development technologies</div>
+    <div class="card">✔ Experience in full-stack web projects</div>
+    <div class="card">✔ Focused on scalable & responsive websites</div>
   </div>
 </section>
 
-<section id="projects">
-  <h2 class="section-title">Projects</h2>
-  <div class="project-grid">
+
+<section class="skills reveal right" id="Skills">
+  <h2>Skills</h2>
+  <div class="underline"></div>
+
+    <div class="tabs">
+    <button class="tab active" onclick="showTab('frontend')">Frontend</button>
+    <button class="tab" onclick="showTab('backend')">Backend</button>
+    <button class="tab" onclick="showTab('database')">Database</button>
+    <button class="tab" onclick="showTab('cloud')">Cloud</button>
+    <button class="tab" onclick="showTab('tools')">Tools</button>
+  </div>
+
+  
+  <div class="cards active" id="frontend">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">React</div>
+  </div>
+
+  <div class="cards" id="backend">
+    <div class="card">Java</div>
+    <div class="card">Spring Boot</div>
+  </div>
+
+  <div class="cards" id="database">
+    <div class="card">MySQL</div>
+  </div>
+
+  <div class="cards" id="cloud">
+    <div class="card">AWS</div>
+  </div>
+
+  <div class="cards" id="tools">
+    <div class="card">Git</div>
+    <div class="card">GitHub</div>
+  </div>
+</section>
+
+<section class="projects reveal up" id="Projects">
+  <h2>Projects</h2>
+  <div class="underline"></div>
+
+  <div class="project-container">
+
+  
     <div class="project-card">
-      <div class="card-top blue">
-        <h3>Weather App</h3>
-        <p>5-day forecast weather app</p>
-        <div class="tags">
-          <span>API</span>
-          <span>JavaScript</span>
-          <span>UI</span>
-        </div>
+      <h3>JobTracker</h3>
+      <p>
+        A full-stack web application to track job applications, manage status,
+        and organize job search efficiently.
+      </p>
+
+      <div class="tags">
+        <span>React</span>
+        <span>Spring Boot</span>
+        <span>MySQL</span>
       </div>
-      <div class="card-bottom">
-        <span>Explore</span>
-        <button>→</button>
+
+      <div class="buttons">
+        <a href="https://github.com/vansh-sharma-eng/JobTracker" class="btn"> <i class="fab fa-github"></i> Code</a>
+        <a href="#" class="btn primary">Demo</a>
       </div>
     </div>
-     </div>
+
+    
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>
+        Personal portfolio website to showcase projects, skills, and achievements.
+      </p>
+
+      <div class="tags">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+      </div>
+
+      <div class="buttons">
+        <a href="https://github.com/vansh-sharma-eng/portfolio_web" target="_blank" class="btn"> <i class="fab fa-github"></i> Code</a>
+        <a href="https://vansh-sharma-eng.github.io/portfolio_web/" target="_blank" class="btn primary">Demo</a>
+      </div>
+    </div>
+
+  </div>
 </section>
 
-<section id="contact">
-  <div class="contact-container">
-   <div class="contact-left">
-      <img src="https://i.pinimg.com/originals/7c/e9/e3/7ce9e34927261d3b035090cac779fec5.gif" alt="contact">
+<section class="education reveal left" id="Education">
+  <h2>Education</h2>
+  <div class="underline"></div>
+
+  <div class="edu-card">
+    
+    <div class="edu-icon">
+      🎓
     </div>
-    <div class="contact-right">
-      <h2>Contact Me</h2>
-      <p>I’ll respond within 24 hours 🚀</p>
-      <form id="contactForm" action="https://formspree.io/f/your-id" method="POST">
-        <input type="text" name="name" id="name" placeholder="Name" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message" required></textarea>
-        <div class="btns">
-          <button type="submit">Send</button>
-          <button type="reset" class="cancel">Cancel</button>
-        </div>
-      </form>
+
+    <div class="edu-content">
+      <div class="top">
+        <h3>B.Tech in Artificial Intelligence & Robotics</h3>
+        <span>2023 – 2027</span>
+      </div>
+
+      <p class="college">
+        Gyan Ganga Institute of Technology & Sciences (GGITS), Jabalpur, India
+      </p>
+
+      <p class="cgpa">CGPA: 7.42</p>
+
+      <p class="desc">
+        Currently pursuing my undergraduate degree with a strong focus on full-stack development.
+        I enjoy building real-world applications using React and Spring Boot while continuously improving
+        my problem-solving and development skills.
+      </p>
+
+      <div class="points">
+        <span>Full Stack Development</span>
+        <span>Java & JavaScript</span>
+        <span>Project-Based Learning</span>
+        <span>JobTracker Project</span>
+      </div>
     </div>
+
   </div>
- <div class="thank-you-card" id="thankCard">
-    <h3>Thank You ❤️</h3>
-    <p id="thankMsg"></p>
-    <button onclick="closeCard()">Close</button>
-<div class="social-icons">
-   <a href="https://www.linkedin.com/in/vansh-sharma-678323301/"><i class="fab fa-linkedin"></i></a>
-  <a href="https://github.com/vansh-sharma-eng"><i class="fab fa-github"></i></a>
-  <a href="mailto:vanshsharmas92005@gmail.com.com"><i class="fas fa-envelope"></i></a>
-</div>
-</div>
+
 </section>
+
+
+<section class="contact reveal right" id="Contact">
+  <h2>Get in Touch</h2>
+  <div class="underline"></div>
+
+  <form action="https://formspree.io/f/mdabebdb" method="POST" class="contact-form">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <input type="text" name="subject" placeholder="Subject" required>
+
+    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+
+    
+    <input type="hidden" name="_subject" value="New message from portfolio">
+
+    
+    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you">
+
+    <button type="submit">Send Message</button>
+
+  </form>
+</section>
+
 <footer class="footer">
-  <div class="footer-content">
-    <p class="footer-tagline">
-      Crafting scalable and modern web experiences with passion 🚀
-    </p>
-    <div class="footer-nav">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+  <p>© 2026 Vansh Sharma. All rights reserved.</p>
+
+  <div class="footer-links">
+    <a href="#">GitHub</a>
+    <a href="#">LinkedIn</a>
+    <a href="#">Email</a>
   </div>
 </footer>
-<script src="Script.js"></script>
+
+  <script src="Script.js"></script>
 </body>
 </html>
