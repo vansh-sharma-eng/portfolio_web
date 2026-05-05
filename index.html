@@ -6,53 +6,91 @@
   <title>Document</title>
   <link rel="stylesheet" href="Style.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+ 
+  </head>
+  
+  <body>
   
 
-  <header class="navbar">
-    <div class="logo">Vansh Sharma</div>
-    <nav>
-      <ul>
-        <li><a href="#Home">Home</a></li>
-        <li><a href="#About">About</a></li>
-        <li><a href="#Skills">Skills</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="#Education">Education</a></li>
-      </ul>
-    </nav>
-    <button class="contact-btn">Contact</button>
-  </header>
+ <header class="navbar">
+  <div class="logo">Vansh Sharma</div>
 
-  <section class="home reveal up" id="Home" >
-    <div class="avatar">V</div>
-    <h1>Vansh Sharma</h1>
-    <h2>Full Stack Developer  
-</h2>
-    <p>
-      Building scalable web applications that solve real-world problems using modern technologies.
-    </p>
-
-    <div class="buttons">
-      <button class="primary">View Projects</button>
-      <button class="secondary">Get in Touch</button>
-    </div>
-   <div class="social-container">
-    <a href="https://github.com/vansh-sharma-eng"  target="_blank" class="icon">
-      <i class="fab fa-github"></i>
-    </a>
-
-    <a href="https://www.linkedin.com/in/vansh-sharma-678323301" target="_blank" class="icon">
-      <i class="fab fa-linkedin-in"></i>
-    </a>
-
-    <a href="mailto:vanshsharmas92005@gmail.com" target="_blank" class="icon">
-      <i class="fas fa-envelope"></i>
-    </a>
+  <!-- 🔥 HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
   </div>
-  </section>
 
-<section class="about reveal left" id="About">
+  <nav id="navMenu">
+    <ul>
+      <li onclick="scrollToSection('Home')"><a>Home</a></li>
+      <li onclick="scrollToSection('About')"><a>About</a></li>
+      <li onclick="scrollToSection('Skills')"><a>Skills</a></li>
+      <li onclick="scrollToSection('Projects')"><a>Projects</a></li>
+      <li onclick="scrollToSection('Education')"><a>Education</a></li>
+    </ul>
+  </nav>
+
+  <button class="contact-btn">Contact</button>
+</header>
+</style>
+</head>
+
+<body>
+
+  <div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+
+
+<section class="home" id="Home">
+
+  <div class="home-container">
+
+    <div class="home-text">
+
+      <h1>
+        <span id="typing"></span>
+      </h1>
+
+      <h2>Full Stack Developer</h2>
+
+      <p>
+        Building scalable web applications that solve real-world problems using modern technologies.
+      </p>
+
+      <div class="buttons">
+        <button class="primary">View Projects</button>
+        <button class="secondary">Get in Touch</button>
+      </div>
+
+      <div class="social-container">
+        <a href="https://github.com/vansh-sharma-eng" target="_blank" class="icon">
+          <i class="fab fa-github"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/vansh-sharma-678323301" target="_blank" class="icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+
+        <a href="mailto:vanshsharmas92005@gmail.com" class="icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="home-image">
+      <img src="home-img.jpg" alt="Vansh Sharma">
+    </div>
+
+  </div>
+  <button id="resumeBtn">Download Resume</button>
+
+</section>
+
+<section class="about " id="About">
   <h2>About Me</h2>
   <div class="underline"></div>
 
@@ -63,10 +101,10 @@
   </p>
 
   <div class="about-cards">
-    <div class="card">✔ 2nd Rank in Inter-House Code Debugging Championship 2026</div>
-    <div class="card">✔ Certified in development technologies</div>
-    <div class="card">✔ Experience in full-stack web projects</div>
-    <div class="card">✔ Focused on scalable & responsive websites</div>
+    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0, 0, 0);"></i> 2nd Rank in Inter-House Code Debugging Championship 2026</div>
+    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0,0,0,);"></i> Certified in development technologies</div>
+    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0,0,0,);"></i> Experience in full-stack web projects</div>
+    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0,0,0,);"></i> Focused on scalable & responsive websites</div>
   </div>
 </section>
 
@@ -110,7 +148,7 @@
   </div>
 </section>
 
-<section class="projects reveal up" id="Projects">
+<section class="projects " id="Projects">
   <h2>Projects</h2>
   <div class="underline"></div>
 
@@ -158,14 +196,14 @@
   </div>
 </section>
 
-<section class="education reveal left" id="Education">
+<section class="education " id="Education">
   <h2>Education</h2>
   <div class="underline"></div>
 
   <div class="edu-card">
     
     <div class="edu-icon">
-      🎓
+      <i class="fa-solid fa-graduation-cap" style="color: rgb(255, 212, 59);"></i>
     </div>
 
     <div class="edu-content">
@@ -199,19 +237,19 @@
 </section>
 
 
-<section class="contact reveal right" id="Contact">
+<section class="contact" id="Contact">
   <h2>Get in Touch</h2>
   <div class="underline"></div>
 
   <form action="https://formspree.io/f/mdabebdb" method="POST" class="contact-form">
 
-    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="name" placeholder="Your Name" autocomplete="off" required>
 
-    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="email" name="email" placeholder="Your Email" autocomplete="off" required>
 
-    <input type="text" name="subject" placeholder="Subject" required>
+  
 
-    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+    <textarea name="message" placeholder="Your Message" rows="5" autocomplete="off" required></textarea>
 
     
     <input type="hidden" name="_subject" value="New message from portfolio">
@@ -225,13 +263,45 @@
 </section>
 
 <footer class="footer">
-  <p>© 2026 Vansh Sharma. All rights reserved.</p>
 
-  <div class="footer-links">
-    <a href="#">GitHub</a>
-    <a href="#">LinkedIn</a>
-    <a href="#">Email</a>
+  <div class="footer-container">
+
+    <!-- LEFT -->
+    <div class="footer-left">
+      <h3>Vansh Sharma</h3>
+      <p>
+        Ready to collaborate on something extraordinary? Let's build something amazing together.
+      </p>
+
+      <div class="footer-social">
+        <a href="https://github.com/vansh-sharma-eng"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/vansh-sharma-678323301"><i class="fab fa-linkedin-in"></i></a>
+        <a href="mailto:vanshsharmas92005@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="#Home">Home</a>
+      <a href="#About">About</a>
+      <a href="#Skills">Skills</a>
+      <a href="#Projects">Projects</a>
+      <a href="#Education">Education</a>
+    </div>
+
+    
+    <div class="footer-contact">
+      <h4>Get In Touch</h4>
+      <a href="mailto:vanshsharmas92005@gmail.com">vanshsharmas92005@gmail.com</a>
+      <p><i class="fa-solid fa-location-dot fa-sm" style="color: rgb(0, 0, 0);"></i> India</p>
+    </div>
+
   </div>
+
+  <p class="footer-bottom">
+    © 2026 Vansh Sharma. All rights reserved.
+  </p>
+
 </footer>
 
   <script src="Script.js"></script>
