@@ -3,306 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Vansh Sharma — Full Stack Developer</title>
   <link rel="stylesheet" href="Style.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- 
-  </head>
-  
-  <body>
-  
-
- <header class="navbar">
-  <div class="logo">Vansh Sharma</div>
-
-  <!-- 🔥 HAMBURGER -->
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <nav id="navMenu">
-    <ul>
-      <li onclick="scrollToSection('Home')"><a>Home</a></li>
-      <li onclick="scrollToSection('About')"><a>About</a></li>
-      <li onclick="scrollToSection('Skills')"><a>Skills</a></li>
-      <li onclick="scrollToSection('Projects')"><a>Projects</a></li>
-      <li onclick="scrollToSection('Education')"><a>Education</a></li>
-    </ul>
-  </nav>
-
-  <button class="contact-btn">Contact</button>
-</header>
-</style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-  <div id="cursor-dot"></div>
-<div id="cursor-ring"></div>
-
-
-
-<section class="home" id="Home">
-
-  <div class="home-container">
-
-    <div class="home-text">
-
-      <h1>
-        <span id="typing"></span>
-      </h1>
-
-      <h2>Full Stack Developer</h2>
-
-      <p>
-        Building scalable web applications that solve real-world problems using modern technologies.
-      </p>
-
-      <div class="buttons">
-        <button class="primary">View Projects</button>
-        <button class="secondary">Get in Touch</button>
-      </div>
-
-      <div class="social-container">
-        <a href="https://github.com/vansh-sharma-eng" target="_blank" class="icon">
-          <i class="fab fa-github"></i>
-        </a>
-
-        <a href="https://www.linkedin.com/in/vansh-sharma-678323301" target="_blank" class="icon">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-
-        <a href="mailto:vanshsharmas92005@gmail.com" class="icon">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </div>
-
-    </div>
-
-    <div class="home-image">
-      <img src="home-img.jpg" alt="Vansh Sharma">
-    </div>
-
-  </div>
-  <button id="resumeBtn">Download Resume</button>
-
-</section>
-
-<section class="about " id="About">
-  <h2>About Me</h2>
-  <div class="underline"></div>
-
-  <p class="about-text">
-    Passionate Full Stack Developer with a strong foundation in JavaScript, React, and Spring Boot.
-    Currently pursuing B.Tech, I focus on building scalable and efficient web applications.
-    I enjoy creating user-friendly websites and continuously improving my skills through real-world projects and problem-solving.
-  </p>
-
-  <div class="about-cards">
-    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0, 0, 0);"></i> 2nd Rank in Inter-House Code Debugging Championship 2026</div>
-    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0,0,0,);"></i> Certified in development technologies</div>
-    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0,0,0,);"></i> Experience in full-stack web projects</div>
-    <div class="card" id="card"><i class="fa-solid fa-check" style="color: rgb(0,0,0,);"></i> Focused on scalable & responsive websites</div>
-  </div>
-</section>
-
-
-<section class="skills reveal right" id="Skills">
-  <h2>Skills</h2>
-  <div class="underline"></div>
-
-    <div class="tabs">
-    <button class="tab active" onclick="showTab('frontend')">Frontend</button>
-    <button class="tab" onclick="showTab('backend')">Backend</button>
-    <button class="tab" onclick="showTab('database')">Database</button>
-    <button class="tab" onclick="showTab('cloud')">Cloud</button>
-    <button class="tab" onclick="showTab('tools')">Tools</button>
-  </div>
-
   
-  <div class="cards active" id="frontend">
-    <div class="card">HTML</div>
-    <div class="card">CSS</div>
-    <div class="card">JavaScript</div>
-    <div class="card">React</div>
-  </div>
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
 
-  <div class="cards" id="backend">
-    <div class="card">Java</div>
-    <div class="card">Spring Boot</div>
-  </div>
+  <!-- ===== NAVBAR ===== -->
+  <header class="navbar">
+    <div class="logo">Vansh Sharma</div>
 
-  <div class="cards" id="database">
-    <div class="card">MySQL</div>
-  </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-  <div class="cards" id="cloud">
-    <div class="card">AWS</div>
-  </div>
+    <nav id="navMenu" aria-label="Main navigation">
+      <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Skills">Skills</a></li>
+        <li><a href="#Projects">Projects</a></li>
+        <li><a href="#Education">Education</a></li>
+      </ul>
+    </nav>
 
-  <div class="cards" id="tools">
-    <div class="card">Git</div>
-    <div class="card">GitHub</div>
-  </div>
-</section>
+    <a href="#Contact" class="contact-btn">Contact</a>
+  </header>
 
-<section class="projects " id="Projects">
-  <h2>Projects</h2>
-  <div class="underline"></div>
+  <!-- ===== HOME ===== -->
+  <section class="home" id="Home">
+    <div class="home-container">
 
-  <div class="project-container">
+      <div class="home-text">
+        <h1><span id="typing"></span></h1>
+        <h2>Full Stack Developer</h2>
+        <p>Building scalable web applications that solve real-world problems using modern technologies.</p>
 
-  
-    <div class="project-card">
-      <h3>JobTracker</h3>
-      <p>
-        A full-stack web application to track job applications, manage status,
-        and organize job search efficiently.
-      </p>
+        <div class="buttons">
+          <button class="btn-primary" id="viewProjectsBtn">View Projects</button>
+          <button class="btn-secondary" id="getInTouchBtn">Get in Touch</button>
+        </div>
 
-      <div class="tags">
-        <span>React</span>
-        <span>Spring Boot</span>
-        <span>MySQL</span>
+        <div class="social-container">
+          <a href="https://github.com/vansh-sharma-eng" target="_blank" rel="noopener noreferrer" class="icon" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/vansh-sharma-678323301" target="_blank" rel="noopener noreferrer" class="icon" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:vanshsharmas92005@gmail.com" class="icon" aria-label="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
       </div>
 
-      <div class="buttons">
-        <a href="https://github.com/vansh-sharma-eng/JobTracker" class="btn"> <i class="fab fa-github"></i> Code</a>
-        <a href="#" class="btn primary">Demo</a>
-      </div>
-    </div>
-
-    
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>
-        Personal portfolio website to showcase projects, skills, and achievements.
-      </p>
-
-      <div class="tags">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
+      <div class="home-image">
+        <img src="home-img.jpg" alt="Vansh Sharma — Full Stack Developer">
       </div>
 
-      <div class="buttons">
-        <a href="https://github.com/vansh-sharma-eng/portfolio_web" target="_blank" class="btn"> <i class="fab fa-github"></i> Code</a>
-        <a href="https://vansh-sharma-eng.github.io/portfolio_web/" target="_blank" class="btn primary">Demo</a>
+    </div>
+
+    <button id="resumeBtn">Download Resume</button>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="About">
+    <h2>About Me</h2>
+    <div class="underline"></div>
+
+    <p class="about-text">
+      Passionate Full Stack Developer with a strong foundation in JavaScript, React, and Spring Boot.
+      Currently pursuing B.Tech, I focus on building scalable and efficient web applications.
+      I enjoy creating user-friendly websites and continuously improving my skills through real-world projects and problem-solving.
+    </p>
+
+    <div class="about-cards">
+      <div class="card">
+        <i class="fa-solid fa-check"></i>
+        2nd Rank in Inter-House Code Debugging Championship 2026
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-check"></i>
+        Certified in development technologies
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-check"></i>
+        Experience in full-stack web projects
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-check"></i>
+        Focused on scalable &amp; responsive websites
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ===== SKILLS ===== -->
+  <section class="skills" id="Skills">
+    <h2>Skills</h2>
+    <div class="underline"></div>
 
-<section class="education " id="Education">
-  <h2>Education</h2>
-  <div class="underline"></div>
-
-  <div class="edu-card">
-    
-    <div class="edu-icon">
-      <i class="fa-solid fa-graduation-cap" style="color: rgb(255, 212, 59);"></i>
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true"  onclick="showTab('frontend', this)">Frontend</button>
+      <button class="tab"        role="tab" aria-selected="false" onclick="showTab('backend', this)">Backend</button>
+      <button class="tab"        role="tab" aria-selected="false" onclick="showTab('database', this)">Database</button>
+      <button class="tab"        role="tab" aria-selected="false" onclick="showTab('cloud', this)">Cloud</button>
+      <button class="tab"        role="tab" aria-selected="false" onclick="showTab('tools', this)">Tools</button>
     </div>
 
-    <div class="edu-content">
-      <div class="top">
-        <h3>B.Tech in Artificial Intelligence & Robotics</h3>
-        <span>2023 – 2027</span>
+    <div class="cards active" id="frontend" role="tabpanel">
+      <div class="card">HTML</div>
+      <div class="card">CSS</div>
+      <div class="card">JavaScript</div>
+      <div class="card">React</div>
+    </div>
+    <div class="cards" id="backend" role="tabpanel">
+      <div class="card">Java</div>
+      <div class="card">Spring Boot</div>
+    </div>
+    <div class="cards" id="database" role="tabpanel">
+      <div class="card">MySQL</div>
+    </div>
+    <div class="cards" id="cloud" role="tabpanel">
+      <div class="card">AWS</div>
+    </div>
+    <div class="cards" id="tools" role="tabpanel">
+      <div class="card">Git</div>
+      <div class="card">GitHub</div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section class="projects" id="Projects">
+    <h2>Projects</h2>
+    <div class="underline"></div>
+
+    <div class="project-container">
+
+      <article class="project-card">
+        <h3>JobTracker</h3>
+        <p>A full-stack web application to track job applications, manage status, and organize job search efficiently.</p>
+        <div class="tags">
+          <span>React</span>
+          <span>Spring Boot</span>
+          <span>MySQL</span>
+        </div>
+        <div class="card-buttons">
+          <a href="https://github.com/vansh-sharma-eng/JobTracker" target="_blank" rel="noopener noreferrer" class="btn">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="#" class="btn btn-primary-card">Demo</a>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <h3>Portfolio Website</h3>
+        <p>Personal portfolio website to showcase projects, skills, and achievements.</p>
+        <div class="tags">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+        </div>
+        <div class="card-buttons">
+          <a href="https://github.com/vansh-sharma-eng/portfolio_web" target="_blank" rel="noopener noreferrer" class="btn">
+            <i class="fab fa-github"></i> Code
+          </a>
+          <a href="https://vansh-sharma-eng.github.io/portfolio_web/" target="_blank" rel="noopener noreferrer" class="btn btn-primary-card">Demo</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ===== EDUCATION ===== -->
+  <section class="education" id="Education">
+    <h2>Education</h2>
+    <div class="underline"></div>
+
+    <div class="edu-card">
+      <div class="edu-icon" aria-hidden="true">
+        <i class="fa-solid fa-graduation-cap"></i>
+      </div>
+      <div class="edu-content">
+        <div class="top">
+          <h3>B.Tech in Artificial Intelligence &amp; Robotics</h3>
+          <span class="edu-year">2023 – 2027</span>
+        </div>
+        <p class="college">Gyan Ganga Institute of Technology &amp; Sciences (GGITS), Jabalpur, India</p>
+        <p class="cgpa">CGPA: 7.42</p>
+        <p class="desc">
+          Currently pursuing my undergraduate degree with a strong focus on full-stack development.
+          I enjoy building real-world applications using React and Spring Boot while continuously improving
+          my problem-solving and development skills.
+        </p>
+        <div class="points">
+          <span>Full Stack Development</span>
+          <span>Java &amp; JavaScript</span>
+          <span>Project-Based Learning</span>
+          <span>JobTracker Project</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="Contact">
+    <h2>Get in Touch</h2>
+    <div class="underline"></div>
+
+    <form action="https://formspree.io/f/mdabebdb" method="POST" class="contact-form" id="contactForm" novalidate>
+      <input type="text"  name="name"    placeholder="Your Name"    autocomplete="name"  required>
+      <input type="email" name="email"   placeholder="Your Email"   autocomplete="email" required>
+      <textarea           name="message" placeholder="Your Message" rows="5" required></textarea>
+
+      <input type="hidden" name="_subject" value="New message from portfolio">
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-left">
+        <h3>Vansh Sharma</h3>
+        <p>Ready to collaborate on something extraordinary? Let's build something amazing together.</p>
+        <div class="footer-social">
+          <a href="https://github.com/vansh-sharma-eng" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/vansh-sharma-678323301" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:vanshsharmas92005@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
       </div>
 
-      <p class="college">
-        Gyan Ganga Institute of Technology & Sciences (GGITS), Jabalpur, India
-      </p>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <h4>Quick Links</h4>
+        <a href="#Home">Home</a>
+        <a href="#About">About</a>
+        <a href="#Skills">Skills</a>
+        <a href="#Projects">Projects</a>
+        <a href="#Education">Education</a>
+      </nav>
 
-      <p class="cgpa">CGPA: 7.42</p>
-
-      <p class="desc">
-        Currently pursuing my undergraduate degree with a strong focus on full-stack development.
-        I enjoy building real-world applications using React and Spring Boot while continuously improving
-        my problem-solving and development skills.
-      </p>
-
-      <div class="points">
-        <span>Full Stack Development</span>
-        <span>Java & JavaScript</span>
-        <span>Project-Based Learning</span>
-        <span>JobTracker Project</span>
+      <div class="footer-contact">
+        <h4>Get In Touch</h4>
+        <a href="mailto:vanshsharmas92005@gmail.com">vanshsharmas92005@gmail.com</a>
+        <p><i class="fa-solid fa-location-dot fa-sm"></i> India</p>
       </div>
+
     </div>
-
-  </div>
-
-</section>
-
-
-<section class="contact" id="Contact">
-  <h2>Get in Touch</h2>
-  <div class="underline"></div>
-
-  <form action="https://formspree.io/f/mdabebdb" method="POST" class="contact-form">
-
-    <input type="text" name="name" placeholder="Your Name" autocomplete="off" required>
-
-    <input type="email" name="email" placeholder="Your Email" autocomplete="off" required>
-
-  
-
-    <textarea name="message" placeholder="Your Message" rows="5" autocomplete="off" required></textarea>
-
-    
-    <input type="hidden" name="_subject" value="New message from portfolio">
-
-    
-    <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you">
-
-    <button type="submit">Send Message</button>
-
-  </form>
-</section>
-
-<footer class="footer">
-
-  <div class="footer-container">
-
-    <!-- LEFT -->
-    <div class="footer-left">
-      <h3>Vansh Sharma</h3>
-      <p>
-        Ready to collaborate on something extraordinary? Let's build something amazing together.
-      </p>
-
-      <div class="footer-social">
-        <a href="https://github.com/vansh-sharma-eng"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/vansh-sharma-678323301"><i class="fab fa-linkedin-in"></i></a>
-        <a href="mailto:vanshsharmas92005@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <a href="#Home">Home</a>
-      <a href="#About">About</a>
-      <a href="#Skills">Skills</a>
-      <a href="#Projects">Projects</a>
-      <a href="#Education">Education</a>
-    </div>
-
-    
-    <div class="footer-contact">
-      <h4>Get In Touch</h4>
-      <a href="mailto:vanshsharmas92005@gmail.com">vanshsharmas92005@gmail.com</a>
-      <p><i class="fa-solid fa-location-dot fa-sm" style="color: rgb(0, 0, 0);"></i> India</p>
-    </div>
-
-  </div>
-
-  <p class="footer-bottom">
-    © 2026 Vansh Sharma. All rights reserved.
-  </p>
-
-</footer>
+    <p class="footer-bottom">© 2026 Vansh Sharma. All rights reserved.</p>
+  </footer>
 
   <script src="Script.js"></script>
 </body>
