@@ -25,6 +25,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
   typeEffect();
 
+// ── THEME: system preference + manual toggle ──
+const html      = document.documentElement;
+const themeBtn  = document.getElementById('themeToggle');
+const themeIcon = themeBtn?.querySelector('i');
+const sysDark   = window.matchMedia('(prefers-color-scheme: dark)');
+
+function applyTheme(theme) {
+  // theme: 'dark' | 'light' | 'auto'
+  if (theme === 'dark') {
+    html.setAttribute('data-theme', 'dark');
+  } else if (theme === 'light') {
+    html.setAttribute('data-theme', 'light');
+  } else {
+    // auto — follow system
+    html.setAttribute('data-theme', sysDark.matches ? 'dark' : 'light');
+  }
+  const isDark = html.getAttribute('data-theme') === 'dark';
+  if (themeIcon) {
+    themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+  }
+}
+
+// On load: respect saved preference, else follow system
+const saved = localStorage.getItem('theme'); // 'dark' | 'light' | null
+applyTheme(saved || 'auto');
+
+// When system preference changes (and user hasn't manually chosen)
+sysDark.addEventListener('change', () => {
+  if (!localStorage.getItem('theme')) applyTheme('auto');
+});
+
+// Button cycles: light → dark → light
+themeBtn?.addEventListener('click', () => {
+  const current = html.getAttribute('data-theme');
+  const next    = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('theme', next);
+  applyTheme(next);
+});
+
+// Hide button when scrolled past home section
+const homeSection  = document.getElementById('Home');
+const onThemeScroll = () => {
+  if (!homeSection || !themeBtn) return;
+  themeBtn.classList.toggle('hide', homeSection.getBoundingClientRect().bottom < 0);
+};
+window.addEventListener('scroll', onThemeScroll, { passive: true });
+  
 // SKILL TABS
   window.showTab = function(tabId, btn) {
     document.querySelectorAll('.cards').forEach(c => c.classList.remove('active'));
@@ -93,7 +140,20 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+  document.getElementById("resumeBtn").addEventListener("click", function () {
 
+    let confirmDownload = confirm(
+      "Do you want to download/open the resume PDF?"
+    );
+
+    if (confirmDownload) {
+      window.open("resume.pdf", "_blank");
+    }
+
+  });
+
+
+  
 // HAMBURGER MENU
   const hamburger = document.getElementById('hamburger');
   const navMenu   = document.querySelector('.navbar nav');
@@ -188,9 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spawnTrail(mouseX, mouseY);
     updateColor();
   });
-
   const hoverSel = 'a, button, .card, .tab, .icon, .project-card, .edu-card, input, textarea, .btn, .btn-primary-card';
-
   document.addEventListener('mouseover', (e) => {
     if (e.target.closest(hoverSel)) document.body.classList.add('cursor-hover');
   });
