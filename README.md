@@ -29,7 +29,3 @@ open index.html
 
 📧 [vanshsharmas92005@gmail.com](mailto:vanshsharmas92005@gmail.com)  
 💼 [LinkedIn](https://www.linkedin.com/in/vansh-sharma-678323301)
-
----
-
-© 2026 Vansh Sharma
